@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio immagine</title>
+</head>
+<body>
+    <img id="immagine" src="../pagina_3.gif" alt="immagine">
+    <button onclick="cambiaImmagine()">Cambia Immagine</button>
+    <script>
+        function cambiaImmagine() {
+            var immagine = document.getElementById("immagine");
+            console.log(immagine.src)
+            if (immagine.src.includes ("pagina_3.gif")) {
+                immagine.src = "../pagina_4.gif";
+            } else {
+                immagine.src = "../pagina_3.gif";
+            }
+        }
+    </script>
+</body>
+</html>
