@@ -1,0 +1,24 @@
+<!DOCTYPE html> 1
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            const moltiplica = function(a,b){
+                return a*b
+            }
+            function parolaMaiuscola(nome){
+                return nome.toUpperCase();
+            }
+            let a = (Number)(prompt("Inserisci il primo numero"));
+            let b = (Number)(prompt("Inserisci il secondo numero"));
+            (function(){
+                console.log(moltiplica(a,b));
+            })();
+            let nome = prompt("Inserisci una parola");
+            console.log(parolaMaiuscola(nome))
+        </script>
+    </body>
+</html>
