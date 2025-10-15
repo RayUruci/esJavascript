@@ -1,0 +1,36 @@
+<!DOCTYPE html> 1
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            function opera(){
+            var calcolo=arguments[0];
+            var parametri = [];
+            var result = 0;
+            for (var i = 1; i< arguments.length; i++){
+                switch(calcolo) {
+                case '+' :
+                    result +=arguments[i];
+                break;
+                    case '-':
+                        result -=arguments[i];
+                break;
+                    case '*' :
+                        result *=arguments[i];
+                break;
+                    case '/' :
+                        result /=arguments[i];
+                break;
+                    default:
+                        result = 0;
+                }
+            }
+            return result;
+            }
+            console.log(opera('*',1,2,0,5))
+        </script>
+    </body>
+</html>
