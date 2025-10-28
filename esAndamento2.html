@@ -42,24 +42,31 @@
             { nome: "Marco", mediaPrimo: 5, votiSecondo: [5, 5, 5] },
             { nome: "Sara",  mediaPrimo: 7, votiSecondo: [8, 7, 9] },
             ];
+            
+            let contA = 0; // media 2° insufficiente
+            let contB = 0; // insufficiente e inferiore
+            let contC = 0; // sufficiente ma inferiore
+            let contD = 0; // sufficiente e superiore
+            
+             for (let studente of studenti) {
+                const [A, B] = confrontaMedie(studente.mediaPrimo, ...studente.votiSecondo);
 
-            for (let studente of studenti) {
-                //stampa dati
-                console.log("Nome:", studente.nome);
-                console.log("Media primo quadrimestre:", studente.mediaPrimo);
-                console.log("Voti secondo quadrimestre:", studente.votiSecondo);
-                let [A, B] = confrontaMedie(studente.mediaPrimo, ...studente.votiSecondo);
-
-                //confronto medie e stampa risultati(1,0)
-                if(A === 1 && B === 0) {
-                    console.log("Media insufficiente e uguale al primo periodo")
-                } else if(A === 0 && B === 1) {
-                    console.log("Media insufficiente e peggiore del primo periodo")
-                } else if(A === 1 && B === 1) {
-                    console.log("Media sufficiente ma peggiore del primo periodo")
-                } else if(A === 0 && B === 0) {
-                    console.log("Media sufficiente e migliore del primo periodo")
+                if (A == 1 && B == 0) {
+                    contA++;
+                } else if (A == 0 && B == 1) {
+                    contB++;
+                } else if (A == 1 && B == 1) {
+                    contA++;
+                    contC++;
+                } else if (A == 0 && B == 0) {
+                    contD++;
                 }
+            }
+
+            console.log("Studenti con media 2° insufficiente:", contA);
+            console.log("Studenti con media 2° insufficiente e inferiore alla 1°:", contB);
+            console.log("Studenti con media 2° sufficiente ma inferiore alla 1°:", contC);
+            console.log("Studenti con media 2° sufficiente e superiore alla 1°:", contD);
             }
         }    
        
