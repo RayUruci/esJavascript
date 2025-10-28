@@ -21,7 +21,6 @@
             for (let i = 1; i < arguments.length; i++) {
                 somma += arguments[i];
             }
-
             let mediaSecondoQuad = somma / numeroVoti;
             if(mediaSecondoQuad < 6 && mediaSecondoQuad == mediaPrimoQuad) {
                 return arr = [1,0]
@@ -48,9 +47,8 @@
             let contC = 0; // sufficiente ma inferiore
             let contD = 0; // sufficiente e superiore
             
-             for (let studente of studenti) {
+            for (let studente of studenti) {
                 const [A, B] = confrontaMedie(studente.mediaPrimo, ...studente.votiSecondo);
-
                 if (A == 1 && B == 0) {
                     contA++;
                 } else if (A == 0 && B == 1) {
@@ -62,7 +60,6 @@
                     contD++;
                 }
             }
-
             console.log("Studenti con media 2° insufficiente:", contA);
             console.log("Studenti con media 2° insufficiente e inferiore alla 1°:", contB);
             console.log("Studenti con media 2° sufficiente ma inferiore alla 1°:", contC);
